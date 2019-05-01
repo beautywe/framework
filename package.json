@@ -1,6 +1,6 @@
 {
   "name": "@beautywe/framework",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Framework out of box for BeautyWe",
   "main": "dist/index.js",
   "scripts": {
@@ -14,7 +14,10 @@
     "build-test-app:complete": "node ./build-test-app.js && cd ./test-app && npm --registry=http://registry.npm.qima-inc.com --disturl=http://npm.taobao.org/mirrors/node i && npm run run:publish",
     "build-test-app": "node ./build-test-app.js && cd ./test-app && npm run run:publish"
   },
-  "keywords": [],
+  "keywords": [
+    "beautywe",
+    "beautywe-framework"
+  ],
   "author": "JerryC8080 (huangjerryc@gmail.com)",
   "devDependencies": {
     "ava": "^0.25.0",
