@@ -1,0 +1,69 @@
+{
+  "name": "@beautywe/framework",
+  "version": "0.0.1",
+  "description": "Framework out of box for BeautyWe",
+  "main": "dist/index.js",
+  "scripts": {
+    "build:pro": "rm -rf ./dist && node_modules/.bin/babel src -d dist",
+    "build:watch": "babel src --watch -d dist",
+    "code-check": "eslint src/**",
+    "code-fix": "eslint --fix src/**",
+    "lint": "git diff --cached --name-only | grep -E '\\.(js|jsx)$' | xargs eslint",
+    "commitmsg": "validate-commit-msg",
+    "commit": "git cz",
+    "build-test-app:complete": "node ./build-test-app.js && cd ./test-app && npm --registry=http://registry.npm.qima-inc.com --disturl=http://npm.taobao.org/mirrors/node i && npm run run:publish",
+    "build-test-app": "node ./build-test-app.js && cd ./test-app && npm run run:publish"
+  },
+  "keywords": [],
+  "author": "JerryC8080 (huangjerryc@gmail.com)",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^6.0.2",
+    "babel-plugin-array-includes": "^2.0.3",
+    "babel-plugin-istanbul": "^5.1.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "commitizen": "^3.0.5",
+    "del": "^3.0.0",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^5.2.2",
+    "nyc": "^13.1.0",
+    "pre-commit": "^1.2.2",
+    "validate-commit-msg": "^2.14.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "nyc": {
+    "sourceMap": false,
+    "instrument": false
+  },
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "lodash": "^4.17.11",
+    "signale": "^1.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beautywe/beautywe-framework.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/beautywe/beautywe-framework/issues"
+  },
+  "homepage": "https://github.com/beautywe/beautywe-framework#readme"
+}

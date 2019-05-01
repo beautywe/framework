@@ -1,0 +1,10 @@
+/yarn.lock
+/node_modules
+/npm-debug.log
+/.vscode
+/.idea
+/.nyc_output
+/coverage
+/dist
+/test-app
+package-lock.json

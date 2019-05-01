@@ -1,0 +1,14 @@
+/.babelrc
+/.gitignore
+/.idea
+/node_modules
+/src
+/test
+/.nyc_output
+/.vscode
+/coverage
+/test-app
+/.eslintignore
+/.eslintrc
+/build-test-app.js
+/README.md

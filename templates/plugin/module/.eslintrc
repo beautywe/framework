@@ -1,0 +1,20 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb-base",
+  "rules": {
+    "indent": ["error", 4, { "SwitchCase": 1 }],
+    "func-names": ["error"],
+    "no-param-reassign": ["error", { "props": false }],
+    "max-len": ["error", { "code": 150 }],
+    "no-underscore-dangle": 0,
+    "new-cap": ["error", { "capIsNewExceptions": ["App", "Page", "Component"] }]
+  },
+  "globals": {
+    "App": true,
+    "wx": true,
+    "getApp": true,
+    "getCurrentPages": true,
+    "Page": true,
+    "Component": true
+  }
+}

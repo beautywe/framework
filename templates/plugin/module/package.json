@@ -1,0 +1,57 @@
+{
+  "name": "<%= moduleName %>",
+  "version": "<%= version %>",
+  "description": "<%= desc %>",
+  "main": "dist/plugin.js",
+  "scripts": {
+    "test": "nyc ava test/**/*.test.js",
+    "test:report": "nyc report --reporter=html",
+    "test:coverage": "nyc --reporter=html ava",
+    "build:pro": "rm -rf ./dist && node_modules/.bin/babel src -d dist",
+    "build:watch": "babel src --watch -d dist",
+    "code-check": "eslint src/**",
+    "code-fix": "eslint --fix src/**",
+    "lint": "git diff --cached --name-only | grep -E '\\.(js|jsx)$' | xargs eslint",
+    "commitmsg": "validate-commit-msg",
+    "commit": "git cz"
+  },
+  "keywords": [
+    "beautywe",
+    "beautywe-plugin"
+  ],
+  "author": "",
+  "devDependencies": {
+    "@beautywe/core": "^0.0.1",
+    "@babel/register": "^7.4.0",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "ava": "^1.4.1",
+    "babel-eslint": "^9.0.0",
+    "babel-plugin-array-includes": "^2.0.3",
+    "babel-plugin-istanbul": "^5.1.0",
+    "commitizen": "^3.0.5",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^5.2.2",
+    "nyc": "^13.1.0",
+    "pre-commit": "^1.2.2",
+    "validate-commit-msg": "^2.14.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "ava": {
+    "require": [
+      "@babel/register"
+    ]
+  },
+  "nyc": {
+    "sourceMap": false,
+    "instrument": false
+  }
+}

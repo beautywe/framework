@@ -1,0 +1,18 @@
+{
+    "templates": {
+        "component": {
+            "source": ".templates/component",
+            "defaultOutput": "src/components"
+        },
+        "page": {
+            "source": ".templates/page",
+            "defaultOutput": "src/pages"
+        },
+        "plugin": {
+            "source": ".templates/plugin",
+            "defaultOutput": "src/libs/plugins"
+        }
+    },
+    "distDir": "dist",
+    "appDir": "src"
+}

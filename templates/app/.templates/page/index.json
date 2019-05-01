@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "container": "/libs/container/index"
+    }
+}
