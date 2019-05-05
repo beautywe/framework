@@ -51,7 +51,10 @@ function copyFile({ sourceDir, targetDir, params, fileName }) {
 
                 .then(() => ({ sourcePath, targetPath }))
 
-                .catch(err => logger.error(`复制文件出错：${targetPath}, `, err));
+                .catch(err => {
+                    err.message = `复制文件出错：${targetPath}, ${err.message}`;
+                    throw err;
+                });
         })))
         .then(data => _.compact(_.flatten(data, true)));
 }
