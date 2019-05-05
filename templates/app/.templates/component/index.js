@@ -2,7 +2,7 @@
  * component <%= name %>
  */
 
-import MyComp from '../../libs/my-comp';
+import MyComp from '<%= relativeToAppDir %>/libs/my-comp';
 
 MyComp({
     /**
