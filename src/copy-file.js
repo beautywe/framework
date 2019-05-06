@@ -2,8 +2,6 @@ const fse = require('fs-extra');
 const nodePath = require('path');
 const _ = require('lodash');
 
-const logger = require('./logger');
-
 function render(sourcePath, targetPath, params) {
     return Promise
         .resolve()
