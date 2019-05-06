@@ -2,8 +2,6 @@ const fse = require('fs-extra');
 const nodePath = require('path');
 const _ = require('lodash');
 
-const logger = require('./logger');
-
 function render(sourcePath, targetPath, params) {
     return Promise
         .resolve()
@@ -51,7 +49,10 @@ function copyFile({ sourceDir, targetDir, params, fileName }) {
 
                 .then(() => ({ sourcePath, targetPath }))
 
-                .catch(err => logger.error(`复制文件出错：${targetPath}, `, err));
+                .catch(err => {
+                    err.message = `复制文件出错：${targetPath}, ${err.message}`;
+                    throw err;
+                });
         })))
         .then(data => _.compact(_.flatten(data, true)));
 }

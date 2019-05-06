@@ -1,6 +1,6 @@
 {
   "name": "@beautywe/framework",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Framework out of box for BeautyWe",
   "main": "dist/index.js",
   "scripts": {

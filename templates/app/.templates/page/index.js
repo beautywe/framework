@@ -1,4 +1,4 @@
-import MyPage from '../../libs/my-page';
+import MyPage from '<%= relativeToAppDir %>/libs/my-page';
 
 MyPage({
     onLoad() {
