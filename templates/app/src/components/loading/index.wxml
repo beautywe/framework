@@ -1,0 +1,5 @@
+<view class="loading" wx:if="{{loading}}">
+    <view class="bouncy-box">
+        <view class="bouncy"></view>
+    </view>
+</view>

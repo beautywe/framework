@@ -9,4 +9,7 @@ module.exports = {
         navigationBarTitleText: 'BeautyWe App',
         navigationBarTextStyle: 'black',
     },
+    usingComponents: {
+        'global-view': '/components/global-view/index',
+    },
 };

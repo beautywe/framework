@@ -12,7 +12,7 @@
     "commitmsg": "validate-commit-msg",
     "commit": "git cz",
     "build-test-app:complete": "node ./build-test-app.js && cd ./test-app && npm --registry=http://registry.npm.qima-inc.com --disturl=http://npm.taobao.org/mirrors/node i && npm run run:publish",
-    "build-test-app": "node ./build-test-app.js && cd ./test-app && npm run run:publish"
+    "build-test-app": "node ./build-test-app.js && cd ./test-app && npm run run:test"
   },
   "keywords": [
     "beautywe",

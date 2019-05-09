@@ -1,0 +1,4 @@
+<view class="global-view">
+    <slot></slot>
+    <loading class="loading" loading="{{loading}}" />
+</view>

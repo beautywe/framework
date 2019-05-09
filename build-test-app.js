@@ -41,6 +41,7 @@ return Promise
         params: {
             name: 'home',
             route: 'pages/home/index',
+            relativeToAppDir: '../../',
         },
     }))
     .then(result => result.forEach((item) => {
