@@ -1,0 +1,7 @@
+<global-view id="global-view" my-global-view-class="my-global-view">
+    <view class="container">
+       <image class="image" src="/assets/images/logo.png"></image>
+       <text class="title">Welcome!</text>
+       <text class="subtitle">Let's write beautiful code by the beautiful we 👨‍💻‍ ! </text>
+    </view>
+</global-view>

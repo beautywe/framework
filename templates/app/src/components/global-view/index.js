@@ -1,4 +1,5 @@
 Component({
+    externalClasses: ['my-global-view-class'],
     data: {
         loading: false,
     },

@@ -1,3 +1,3 @@
 module.exports.routes = {
-    home: 'pages/home/index',
+    welcome: 'pages/welcome/index',
 };

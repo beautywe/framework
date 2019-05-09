@@ -35,18 +35,18 @@ return Promise
     }))
     
     // new page
-    .then(() => beautyweTemplates.render({
-        type: 'page',
-        targetDir: path.join(TEST_APP_FLODER, '/src/pages/home'),
-        params: {
-            name: 'home',
-            route: 'pages/home/index',
-            relativeToAppDir: '../../',
-        },
-    }))
-    .then(result => result.forEach((item) => {
-        logger.success(`生成文件：${item.targetPath}`);
-    }))
+    // .then(() => beautyweTemplates.render({
+    //     type: 'page',
+    //     targetDir: path.join(TEST_APP_FLODER, '/src/pages/home'),
+    //     params: {
+    //         name: 'home',
+    //         route: 'pages/home/index',
+    //         relativeToAppDir: '../../',
+    //     },
+    // }))
+    // .then(result => result.forEach((item) => {
+    //     logger.success(`生成文件：${item.targetPath}`);
+    // }))
 
     // new plugin
     .then(() => beautyweTemplates.render({
