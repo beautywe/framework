@@ -26,7 +26,7 @@ return Promise
         targetDir: TEST_APP_FLODER,
         params: {
             appName: 'beautywe-framework-test-app',
-            appid: 'wx6740f8a0f88af0df',
+            appid: '',
             version: '0.0.1',
         },
     }))
