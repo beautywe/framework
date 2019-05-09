@@ -6,6 +6,8 @@
     flex-direction: column;
     text-align: center;
     padding: 0 40rpx;
+    position: relative;
+    top: 40rpx;
 
     .image {
         height: 400rpx;
@@ -22,10 +24,10 @@
     .subtitle {
         color: #34495e;
         font-size: 40rpx;
-        margin-top:10rpx;
+        margin-top: 10rpx;
     }
 }
 
 .my-global-view {
-    background: linear-gradient(to left bottom, hsl(217, 100%, 85%) 0%,hsl(146, 100%, 85%) 100%);
+    background: linear-gradient(to left bottom, hsl(217, 100%, 85%) 0%, hsl(146, 100%, 85%) 100%);
 }
