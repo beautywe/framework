@@ -15,14 +15,6 @@ conf.jsonCompile = [{
     from: `${APP_DIR}/config/index.js`,
     to: `${DIST_DIR}/config`,
     fileMode: 'commonjs',
-}, {
-    from: `${APP_DIR}/app-json.js`,
-    to: DIST_DIR,
-    fileMode: 'json',
-    output: {
-        filename: 'app',
-        extname: '.json',
-    },
 }];
 
 conf.npm = {
