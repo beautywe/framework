@@ -1,3 +1,4 @@
 <global-view>
     <text>Hello ! I'am listpage</text>
+    <image wx:for="{{listPage.list.pictures.data}}" src="{{item}}" />
 </global-view>

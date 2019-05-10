@@ -11,9 +11,10 @@
         "lint": "git diff --cached --name-only | grep -E '\\.(js|jsx)$' | xargs eslint"
     },
     "dependencies": {
-        "@beautywe/core": "^0.0.2",
+        "@beautywe/core": "^0.0.10",
         "@beautywe/plugin-event": "^0.0.3",
-        "@beautywe/plugin-storage": "^0.0.1"
+        "@beautywe/plugin-storage": "^0.0.1",
+        "@beautywe/plugin-listpage": "^0.0.2"
     },
     "devDependencies": {
         "@babel/cli": "^7.0.0",
