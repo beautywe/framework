@@ -3,5 +3,5 @@
         <slot></slot>
     </view>
     <loading class="loading" loading="{{loading}}" />
-    <copyright />
+    <copyright class="copyright"  />
 </view>

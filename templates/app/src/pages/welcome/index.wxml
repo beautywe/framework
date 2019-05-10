@@ -3,5 +3,8 @@
        <image class="image" src="/assets/images/logo.png"></image>
        <text class="title">Welcome!</text>
        <text class="subtitle">Let's write beautiful code by the beautiful we 👨‍💻‍ ! </text>
+       <navigator url="/examples/pages/home/index">
+           <button class="button" hover-class="button-press">See Examples</button>
+       </navigator>
     </view>
 </global-view>

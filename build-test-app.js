@@ -13,7 +13,7 @@ return Promise
     // clear app floader except ./node_modules (you should update by hand if necessary)
     .then(() => fs.readdir(TEST_APP_FLODER))
     .then((files) => Promise.all(files.map((file) => {
-        if (file === 'node_modules') return Promise.resolve([]);
+        if (['node_modules'].includes(file)) return Promise.resolve([]);
         else return del([path.join(TEST_APP_FLODER, `/${file}`)]);
     })))
     .then((results) => {
@@ -26,7 +26,7 @@ return Promise
         targetDir: TEST_APP_FLODER,
         params: {
             appName: 'beautywe-framework-test-app',
-            appid: '',
+            appid: 'wx85fc0d03fb0b224d',
             version: '0.0.1',
         },
     }))

@@ -10,5 +10,14 @@
     },
     "pages": [
         "pages/welcome/index"
+    ],
+    "subPackages": [
+        {
+            "root": "examples",
+            "pages": [
+                "pages/home/index",
+                "pages/plugin/listpage/index"
+            ]
+        }
     ]
 }

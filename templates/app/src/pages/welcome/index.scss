@@ -7,24 +7,57 @@
     text-align: center;
     padding: 0 40rpx;
     position: relative;
-    top: 40rpx;
+    height: 100vh;
+    top: 30rpx;
 
     .image {
         height: 400rpx;
         width: 400rpx;
+        margin-bottom: 70rpx;
     }
 
     .title {
         font-weight: 800;
         font-size: 100rpx;
         color: rgb(17, 15, 15);
-        margin-top: 70rpx;
+        margin-bottom: 10rpx;
     }
 
     .subtitle {
         color: #34495e;
         font-size: 40rpx;
-        margin-top: 10rpx;
+        margin-bottom: 80rpx;
+    }
+
+    .button {
+        width: 324rpx;
+        padding: 26rpx 0;
+        overflow: visible;
+        font-size: 32rpx;
+        line-height: 42rpx;
+
+        &::after {
+            border-radius: 0;
+            border: none;
+        }
+
+        border-radius: 56rpx;
+
+        &::before {
+            border-radius: 56rpx * 2;
+        }
+
+        color: #ffffff;
+        background: linear-gradient(123deg, rgb(233, 30, 99) 3%, #e94d75 100%);
+        border: none;
+
+        &::before {
+            border: none;
+        }
+    }
+
+    .button-press {
+        opacity: 0.8;
     }
 }
 

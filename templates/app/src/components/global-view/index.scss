@@ -7,20 +7,11 @@
     width: 750rpx;
     overflow: hidden;
     position: relative;
-
-    &>view,
-    &>text,
-    &>scroll-view,
-    &>swiper,
-    &>movable-area,
-    &>cover-view {
-        width: 100%;
-    }
 }
 
 .content {
     flex: 1;
-    display: flex;
+    width: 100%;
 }
 
 .loading {
@@ -29,4 +20,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1001;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 0;
 }
