@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "copyright",
+    "usingComponents": {
+        "copyright": "/components/copyright/index"
+    }
+}

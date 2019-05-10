@@ -1,23 +1,25 @@
 {
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "BeautyWe App",
-        "navigationBarTextStyle": "black"
-    },
-    "usingComponents": {
-        "global-view": "/components/global-view/index"
-    },
-    "pages": [
-        "pages/welcome/index"
-    ],
-    "subPackages": [
-        {
-            "root": "examples",
-            "pages": [
-                "pages/home/index",
-                "pages/plugin/listpage/index"
-            ]
-        }
-    ]
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "BeautyWe App",
+		"navigationBarTextStyle": "black"
+	},
+	"usingComponents": {
+		"global-view": "/components/global-view/index"
+	},
+	"pages": [
+		"pages/welcome/index"
+	],
+	"subPackages": [
+		{
+			"root": "examples",
+			"pages": [
+				"pages/home/index",
+				"pages/plugin/listpage/index",
+				"pages/comps/loading/index",
+				"pages/comps/copyright/index"
+			]
+		}
+	]
 }

@@ -9,8 +9,8 @@ Page({
                 'listpage',
             ],
         }, {
-            id: 'base-component',
-            name: '基础组件',
+            id: 'comps',
+            name: '组件',
             open: false,
             pages: [
                 'copyright',
