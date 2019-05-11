@@ -3,7 +3,7 @@ const clean = require('../clean');
 const copy = require('../copy');
 const scripts = require('../scripts-min');
 const sass = require('../sass-min');
-const jsonCompile = require('../json-compile');
+const nodeJsPower = require('../nodejs-power');
 const npm = require('../npm');
 const imageMin = require('../image-min');
 const cleanExample = require('../clean-example');
@@ -15,7 +15,7 @@ module.exports = {
         gulp.parallel(
             scripts.fn,
             sass.fn,
-            jsonCompile.fn,
+            nodeJsPower.fn,
             npm.fn,
             imageMin.fn,
         ),

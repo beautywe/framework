@@ -11,11 +11,11 @@ const conf = {
     ENV: process.env.NODE_ENV,
 };
 
-conf.jsonCompile = [{
-    from: `${APP_DIR}/config/index.js`,
-    to: `${DIST_DIR}/config`,
-    fileMode: 'commonjs',
-}];
+conf.nodeJsPower = {
+    from: `${APP_DIR}/**/*.nodepower.js`,
+    to: DIST_DIR,
+    mode: 'commonjs',
+};
 
 conf.npm = {
     from: `${APP_DIR}/npm/index.js`,
@@ -27,8 +27,9 @@ conf.scripts = {
     from: [
         `${APP_DIR}/**/*.js`,
         `!${APP_DIR}/npm/**/*.js`,
-        `!${APP_DIR}/config/**/*.js`,
-    ].concat(conf.jsonCompile.map(_conf => `!${_conf.from}`)),
+        `!${APP_DIR}/config/**/!(index).js`,
+        `!${APP_DIR}/**/*${conf.nodeJsPower.extentions}.js`,
+    ],
     to: DIST_DIR,
     babel: babelConf,
 };
