@@ -1,4 +1,5 @@
-<global-view>
-    <text>Hello ! I'am listpage</text>
-    <image wx:for="{{listPage.list.pictures.data}}" src="{{item}}" />
+<global-view id="global-view">
+    <view class="container">
+        <image class="image animated fadeInUp" mode="aspectFill" wx:for="{{listPage.list.pictures.data}}"  wx:key="*this" src="{{item}}" />
+    </view>
 </global-view>

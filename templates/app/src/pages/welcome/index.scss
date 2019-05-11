@@ -7,8 +7,8 @@
     text-align: center;
     padding: 0 40rpx;
     position: relative;
-    height: 100vh;
-    top: 30rpx;
+    height:80vh;
+    top:12vh;    
 
     .image {
         height: 400rpx;
@@ -61,6 +61,26 @@
     }
 }
 
-.my-global-view {
+.my-global-view0 {
     background: linear-gradient(to left bottom, hsl(217, 100%, 85%) 0%, hsl(146, 100%, 85%) 100%);
+}
+
+.my-global-view1 {
+    background: linear-gradient(to left bottom, hsl(54, 100%, 85%) 0%,hsl(236, 100%, 85%) 100%);
+}
+
+.my-global-view2 {
+    background: linear-gradient(to left bottom, hsl(148, 100%, 85%) 0%,hsl(42, 100%, 85%) 100%);
+}
+
+.my-global-view3 {
+    background: linear-gradient(to left bottom, hsl(222, 100%, 85%) 0%,hsl(7, 100%, 85%) 100%);
+}
+
+.my-global-view4 {
+    background: linear-gradient(to left bottom, hsl(16, 100%, 85%) 0%,hsl(60, 100%, 85%) 100%);
+}
+
+.my-global-view5 {
+    background: linear-gradient(to left bottom, hsl(57, 100%, 85%) 0%,hsl(1, 100%, 85%) 100%);
 }

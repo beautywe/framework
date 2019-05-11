@@ -1,10 +1,25 @@
-<global-view id="global-view" my-global-view-class="my-global-view">
+<wxs module="mywxs">
+    var myGlobalViewClass = [
+        'my-global-view0',
+        'my-global-view1',
+        'my-global-view2',
+        'my-global-view3',
+        'my-global-view4',
+        'my-global-view5',
+    ][Math.floor(Math.random() * 5)];
+  
+    module.exports = { 
+        myGlobalViewClass : myGlobalViewClass, 
+    }
+</wxs>
+
+<global-view id="global-view" my-global-view-class="{{mywxs.myGlobalViewClass}}">
     <view class="container">
-       <image class="image" src="/assets/images/logo.png"></image>
-       <text class="title">Welcome!</text>
-       <text class="subtitle">Let's write beautiful code by the beautiful we 👨‍💻‍ ! </text>
+       <image class="image animated jackInTheBox" src="/assets/images/logo.png"></image>
+       <text class="title animated fadeInDown">Welcome!</text>
+       <text class="subtitle animated fadeInDown">Let's write beautiful code by the beautiful we 👨‍💻‍ ! </text>
        <navigator url="/examples/pages/home/index">
-           <button class="button" hover-class="button-press">See Examples</button>
+           <button class="button animated fadeInDown" hover-class="button-press">See Examples</button>
        </navigator>
     </view>
 </global-view>
