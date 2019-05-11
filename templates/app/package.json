@@ -50,6 +50,7 @@
         "time-buried": "0.0.5",
         "validate-commit-msg": "^2.14.0",
         "webpack": "^4.29.6",
-        "webpack-stream": "^5.2.1"
+        "webpack-stream": "^5.2.1",
+        "fs-extra": "^8.0.0"
     }
 }

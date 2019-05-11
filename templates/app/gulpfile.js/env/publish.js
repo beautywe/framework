@@ -6,6 +6,7 @@ const sass = require('../sass-min');
 const jsonCompile = require('../json-compile');
 const npm = require('../npm');
 const imageMin = require('../image-min');
+const cleanExample = require('../clean-example');
 
 module.exports = {
     fn: gulp.series(
@@ -18,5 +19,6 @@ module.exports = {
             npm.fn,
             imageMin.fn,
         ),
+        cleanExample.fn,
     ),
 };
