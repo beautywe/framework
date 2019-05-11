@@ -2,9 +2,9 @@
     "name": "<%= appName %>",
     "version": "<%= version %>",
     "scripts": {
-        "run:dev": "cross-env NODE_ENV=development ./node_modules/.bin/beautywe run dev",
-        "run:test": "cross-env NODE_ENV=development ./node_modules/.bin/beautywe run test",
-        "run:publish": "cross-env NODE_ENV=production ./node_modules/.bin/beautywe run publish",
+        "dev": "cross-env NODE_ENV=development ./node_modules/.bin/beautywe run dev",
+        "build:test": "cross-env NODE_ENV=development ./node_modules/.bin/beautywe run test",
+        "build:publish": "cross-env NODE_ENV=production ./node_modules/.bin/beautywe run publish",
         "commitmsg": "validate-commit-msg",
         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
         "commit": "git cz",

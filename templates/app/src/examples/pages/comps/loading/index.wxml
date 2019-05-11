@@ -1,5 +1,5 @@
 <global-view id="global-view">
-    <text>Hello ! I'am loading</text>
+    <view style="text-align:center">Hello ! I'am loading</view>
     <button bindtap="show">Show loading</button>
     <button bindtap="hide" >Hide loading</button>
     <loading loading="{{loading}}" />
