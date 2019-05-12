@@ -35,6 +35,7 @@
         "eslint-plugin-import": "^2.16.0",
         "gulp": "^4.0.0",
         "gulp-babel": "^8.0.0",
+        "gulp-clean": "^0.4.0",
         "gulp-csso": "^3.0.1",
         "gulp-define-module": "^0.1.5",
         "gulp-imagemin": "^4.1.0",

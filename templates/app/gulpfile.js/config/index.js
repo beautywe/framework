@@ -42,11 +42,8 @@ conf.imageMin = {
 conf.sass = {
     from: `${APP_DIR}/**/*.{scss,wxss}`,
     to: `${DIST_DIR}`,
-    cssFilterFiles: [
-        'style/mixin/index.scss',
-        'style/variable/index.scss',
-        'style/variable/color.scss',
-        'style/variable/font.scss',
+    whiteListForImport: [
+        'style/mixin.scss',
     ],
 };
 
