@@ -18,7 +18,9 @@
 				"pages/home/index",
 				"pages/menu/plugin/listpage/index",
 				"pages/menu/comps/loading/index",
-				"pages/menu/comps/copyright/index"
+				"pages/menu/comps/copyright/index",
+				"pages/menu/plugin/event/index",
+				"pages/menu/plugin/event/other/index"
 			]
 		}
 	]
