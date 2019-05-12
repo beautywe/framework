@@ -1,6 +1,6 @@
-import MyPage from '../../../../libs/my-page';
-import { plugin, beautywe } from '../../../../npm/index';
-import { getGlobalView, sleep } from '../../../../libs/utils/helper';
+import MyPage from '../../../../../libs/my-page';
+import { plugin, beautywe } from '../../../../../npm/index';
+import { getGlobalView, sleep } from '../../../../../libs/utils/helper';
 
 const myPage = new beautywe.BtPage({});
 

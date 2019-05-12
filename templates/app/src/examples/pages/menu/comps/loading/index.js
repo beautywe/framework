@@ -1,4 +1,4 @@
-import MyPage from '../../../../libs/my-page';
+import MyPage from '../../../../../libs/my-page';
 
 MyPage({
     data: {

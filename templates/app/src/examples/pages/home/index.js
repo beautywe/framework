@@ -1,23 +1,22 @@
+import menusInfo from '../../libs/menu-info.nodepower';
+
+const menus = menusInfo.map(({ id, pages }) => {
+    const alias = {
+        plugin: '插件',
+        comps: '组件',
+    };
+
+    return {
+        id,
+        pages,
+        open: false,
+        name: alias[id] || id,
+    };
+});
+
 Page({
     data: {
-        // TODO 使用 json-compile 通过 node 来读取文件夹实现。
-        list: [{
-            id: 'plugin',
-            name: '插件',
-            open: false,
-            pages: [
-                'listpage',
-            ],
-        }, {
-            id: 'comps',
-            name: '组件',
-            open: false,
-            pages: [
-                'copyright',
-                'loading',
-            ],
-        }],
-        // you can extend your business components demo here...
+        list: menus,
     },
     toggle(e) {
         const id = e.currentTarget.id;

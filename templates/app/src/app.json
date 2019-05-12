@@ -16,9 +16,9 @@
 			"root": "examples",
 			"pages": [
 				"pages/home/index",
-				"pages/plugin/listpage/index",
-				"pages/comps/loading/index",
-				"pages/comps/copyright/index"
+				"pages/menu/plugin/listpage/index",
+				"pages/menu/comps/loading/index",
+				"pages/menu/comps/copyright/index"
 			]
 		}
 	]

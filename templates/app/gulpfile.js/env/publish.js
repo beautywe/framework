@@ -15,10 +15,10 @@ module.exports = {
         gulp.parallel(
             scripts.fn,
             sass.fn,
-            nodeJsPower.fn,
             npm.fn,
             imageMin.fn,
         ),
+        nodeJsPower.fn,
         cleanExample.fn,
     ),
 };
