@@ -1,13 +1,11 @@
-const beautywe = require('@beautywe/core');
-const storage = require('@beautywe/plugin-storage');
-const event = require('@beautywe/plugin-event');
-const listpage = require('@beautywe/plugin-listpage');
+import storage from '@beautywe/plugin-storage';
+import event from '@beautywe/plugin-event';
+import listpage from '@beautywe/plugin-listpage';
 
-module.exports = {
-    beautywe,
-    plugin: {
-        storage,
-        event,
-        listpage: listpage.default,
-    },
+export const plugin = {
+    storage,
+    event,
+    listpage,
 };
+
+export { default as beautywe } from '@beautywe/core';
