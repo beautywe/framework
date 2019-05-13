@@ -14,7 +14,8 @@
         "@beautywe/core": "^0.0.10",
         "@beautywe/plugin-event": "^0.0.3",
         "@beautywe/plugin-storage": "^0.0.1",
-        "@beautywe/plugin-listpage": "^0.0.3"
+        "@beautywe/plugin-listpage": "^0.0.3",
+        "@beautywe/plugin-logger": "^0.0.1"
     },
     "devDependencies": {
         "@babel/cli": "^7.0.0",
