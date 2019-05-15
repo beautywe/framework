@@ -11,11 +11,11 @@
         "lint": "git diff --cached --name-only | grep -E '\\.(js|jsx)$' | xargs eslint"
     },
     "dependencies": {
-        "@beautywe/core": "^0.0.10",
-        "@beautywe/plugin-event": "^0.0.3",
-        "@beautywe/plugin-storage": "^0.0.1",
-        "@beautywe/plugin-listpage": "^0.0.3",
-        "@beautywe/plugin-logger": "^0.0.1"
+        "@beautywe/core": "^1.0.0",
+        "@beautywe/plugin-event": "^1.0.0",
+        "@beautywe/plugin-storage": "^1.0.0",
+        "@beautywe/plugin-listpage": "^1.0.0",
+        "@beautywe/plugin-logger": "^1.0.0"
     },
     "devDependencies": {
         "@babel/cli": "^7.0.0",
@@ -23,7 +23,7 @@
         "@babel/polyfill": "^7.2.5",
         "@babel/preset-env": "^7.0.0",
         "@babel/register": "^7.4.0",
-        "@beautywe/cli": "^0.0.1",
+        "@beautywe/cli": "^1.0.0",
         "babel-loader": "^8.0.5",
         "babel-plugin-array-includes": "^2.0.3",
         "chalk": "^2.4.1",
