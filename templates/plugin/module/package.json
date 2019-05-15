@@ -21,7 +21,7 @@
   ],
   "author": "",
   "devDependencies": {
-    "@beautywe/core": "^0.0.1",
+    "@beautywe/core": "^1.0.0",
     "@babel/register": "^7.4.0",
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",

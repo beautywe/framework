@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "Welcome to BeautyWe",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
+}

@@ -1,0 +1,86 @@
+/** welcome index.scss **/
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 40rpx;
+    position: relative;
+    height:80vh;
+    top:12vh;    
+
+    .image {
+        height: 400rpx;
+        width: 400rpx;
+        margin-bottom: 70rpx;
+    }
+
+    .title {
+        font-weight: 800;
+        font-size: 100rpx;
+        color: rgb(17, 15, 15);
+        margin-bottom: 10rpx;
+    }
+
+    .subtitle {
+        color: #34495e;
+        font-size: 40rpx;
+        margin-bottom: 80rpx;
+    }
+
+    .button {
+        width: 324rpx;
+        padding: 26rpx 0;
+        overflow: visible;
+        font-size: 32rpx;
+        line-height: 42rpx;
+
+        &::after {
+            border-radius: 0;
+            border: none;
+        }
+
+        border-radius: 56rpx;
+
+        &::before {
+            border-radius: 56rpx * 2;
+        }
+
+        color: #ffffff;
+        background: linear-gradient(123deg, rgb(233, 30, 99) 3%, #e94d75 100%);
+        border: none;
+
+        &::before {
+            border: none;
+        }
+    }
+
+    .button-press {
+        opacity: 0.8;
+    }
+}
+
+.my-global-view0 {
+    background: linear-gradient(to left bottom, hsl(217, 100%, 85%) 0%, hsl(146, 100%, 85%) 100%);
+}
+
+.my-global-view1 {
+    background: linear-gradient(to left bottom, hsl(54, 100%, 85%) 0%,hsl(236, 100%, 85%) 100%);
+}
+
+.my-global-view2 {
+    background: linear-gradient(to left bottom, hsl(148, 100%, 85%) 0%,hsl(42, 100%, 85%) 100%);
+}
+
+.my-global-view3 {
+    background: linear-gradient(to left bottom, hsl(222, 100%, 85%) 0%,hsl(7, 100%, 85%) 100%);
+}
+
+.my-global-view4 {
+    background: linear-gradient(to left bottom, hsl(16, 100%, 85%) 0%,hsl(60, 100%, 85%) 100%);
+}
+
+.my-global-view5 {
+    background: linear-gradient(to left bottom, hsl(57, 100%, 85%) 0%,hsl(1, 100%, 85%) 100%);
+}

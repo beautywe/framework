@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "loading": "/components/loading/index",
+        "copyright": "/components/copyright/index"
+    }
+}

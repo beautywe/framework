@@ -1,6 +1,6 @@
 {
   "name": "@beautywe/framework",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Framework out of box for BeautyWe",
   "main": "dist/index.js",
   "scripts": {
@@ -11,8 +11,8 @@
     "lint": "git diff --cached --name-only | grep -E '\\.(js|jsx)$' | xargs eslint",
     "commitmsg": "validate-commit-msg",
     "commit": "git cz",
-    "build-test-app:complete": "node ./build-test-app.js && cd ./test-app && npm --registry=http://registry.npm.qima-inc.com --disturl=http://npm.taobao.org/mirrors/node i && npm run run:publish",
-    "build-test-app": "node ./build-test-app.js && cd ./test-app && npm run run:publish"
+    "build-test-app:complete": "node ./build-test-app.js && cd ./test-app && npm i && npm run build:test",
+    "build-test-app": "node ./build-test-app.js && cd ./test-app && npm run build:test"
   },
   "keywords": [
     "beautywe",

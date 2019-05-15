@@ -1,0 +1,27 @@
+{
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "BeautyWe App",
+		"navigationBarTextStyle": "black"
+	},
+	"usingComponents": {
+		"global-view": "/components/global-view/index"
+	},
+	"pages": [
+		"pages/welcome/index"
+	],
+	"subPackages": [
+		{
+			"root": "examples",
+			"pages": [
+				"pages/home/index",
+				"pages/menu/plugin/listpage/index",
+				"pages/menu/comps/loading/index",
+				"pages/menu/comps/copyright/index",
+				"pages/menu/plugin/event/index",
+				"pages/menu/plugin/event/other/index"
+			]
+		}
+	]
+}

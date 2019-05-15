@@ -2,17 +2,18 @@
     "templates": {
         "component": {
             "source": ".templates/component",
-            "defaultOutput": "src/components"
+            "defaultOutput": "components"
         },
         "page": {
             "source": ".templates/page",
-            "defaultOutput": "src/pages"
+            "defaultOutput": "pages"
         },
         "plugin": {
             "source": ".templates/plugin",
-            "defaultOutput": "src/libs/plugins"
+            "defaultOutput": "libs/plugins"
         }
     },
     "distDir": "dist",
-    "appDir": "src"
+    "appDir": "src",
+    "writeRouteAfterCreated": true
 }
