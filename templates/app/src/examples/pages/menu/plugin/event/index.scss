@@ -1,0 +1,15 @@
+/** event index.scss **/
+
+.container {
+    margin-top: 50rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .image {
+        width: 720rpx;
+        height: 480rpx;
+        margin-top: 50rpx;
+        overflow: hidden;
+        border-radius: 14rpx;
+    }
+}

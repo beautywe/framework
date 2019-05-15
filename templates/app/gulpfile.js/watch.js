@@ -3,7 +3,7 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 const gulpConf = require('./config');
 const nPath = require('path');
-const jsonCompile = require('./json-compile');
+const nodejsPower = require('./nodejs-power');
 const sassCompile = require('./sass');
 const npmCompile = require('./npm');
 const del = require('del');
@@ -79,21 +79,19 @@ function watchAssets() {
     });
 }
 
-function watchJsonCompile() {
-    const watchers = [];
-    gulpConf.jsonCompile.forEach((conf) => {
-        watchers.push(new Promise((resolve) => {
+function watchNodeJsPower() {
+    return Promise
+        .resolve()
+        .then(() => new Promise((resolve) => {
             generateWatcher({
-                from: conf.from,
-                changeOrAdd(path) {
-                    return jsonCompile.doCompile(Object.assign({}, conf, { from: path }));
+                from: gulpConf.nodeJsPower.from,
+                changeOrAdd: (path) => {
+                    const { filePath, toPath } = resolvePath(path);
+                    return nodejsPower.doCompile({ from: filePath, to: toPath });
                 },
             })
-            .on('end', resolve);
+                .on('end', resolve);
         }));
-    });
-
-    return Promise.all(watchers);
 }
 
 function watchStyle() {
@@ -121,6 +119,6 @@ function watchNPM() {
 }
 
 module.exports = {
-    fn: gulp.parallel(watchScripts, watchAssets, watchJsonCompile, watchStyle, watchNPM),
+    fn: gulp.parallel(watchScripts, watchAssets, watchNodeJsPower, watchStyle, watchNPM),
     resolvePath,
 };

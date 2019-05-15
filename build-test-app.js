@@ -13,7 +13,7 @@ return Promise
     // clear app floader except ./node_modules (you should update by hand if necessary)
     .then(() => fs.readdir(TEST_APP_FLODER))
     .then((files) => Promise.all(files.map((file) => {
-        if (file === 'node_modules') return Promise.resolve([]);
+        if (['node_modules'].includes(file)) return Promise.resolve([]);
         else return del([path.join(TEST_APP_FLODER, `/${file}`)]);
     })))
     .then((results) => {
@@ -26,7 +26,7 @@ return Promise
         targetDir: TEST_APP_FLODER,
         params: {
             appName: 'beautywe-framework-test-app',
-            appid: 'wx6740f8a0f88af0df',
+            appid: 'wx85fc0d03fb0b224d',
             version: '0.0.1',
         },
     }))
@@ -35,17 +35,18 @@ return Promise
     }))
     
     // new page
-    .then(() => beautyweTemplates.render({
-        type: 'page',
-        targetDir: path.join(TEST_APP_FLODER, '/src/pages/home'),
-        params: {
-            name: 'home',
-            route: 'pages/home/index',
-        },
-    }))
-    .then(result => result.forEach((item) => {
-        logger.success(`生成文件：${item.targetPath}`);
-    }))
+    // .then(() => beautyweTemplates.render({
+    //     type: 'page',
+    //     targetDir: path.join(TEST_APP_FLODER, '/src/pages/home'),
+    //     params: {
+    //         name: 'home',
+    //         route: 'pages/home/index',
+    //         relativeToAppDir: '../../',
+    //     },
+    // }))
+    // .then(result => result.forEach((item) => {
+    //     logger.success(`生成文件：${item.targetPath}`);
+    // }))
 
     // new plugin
     .then(() => beautyweTemplates.render({

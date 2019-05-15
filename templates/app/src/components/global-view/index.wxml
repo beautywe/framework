@@ -1,0 +1,7 @@
+<view class="global-view my-global-view-class">
+    <view class="content">
+        <slot></slot>
+    </view>
+    <loading class="loading" loading="{{loading}}" />
+    <copyright class="copyright"  />
+</view>

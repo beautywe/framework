@@ -4,47 +4,66 @@ const replace = require('gulp-replace');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const path = require('path');
+const clean = require('gulp-clean');
 const gulpConfig = require('./config');
 
-function doCompile(task) {
-    const hasRmCssFiles = new Set();
-    const { cssFilterFiles } = gulpConfig.sass;
+function doCompile({ from, to }) {
+    const { whiteListForImport } = gulpConfig.sass;
+    const toRemoveFiles = new Set();
 
-    return task.pipe(tap((file) => {
-        // 当前处理文件的路径
-        const filePath = path.dirname(file.path);
-        // 当前处理内容
-        const content = file.contents.toString();
-        // 找到filter的scss，并匹配是否在配置文件中
-        content.replace(/@import\s+['|"](.+)['|"];/g, ($1, $2) => {
-            const hasFilter = cssFilterFiles.filter(item => $2.indexOf(item) > -1);
-            // hasFilter > 0表示filter的文件在配置文件中，打包完成后需要删除
-            if (hasFilter.length > 0) {
-                const rmPath = path.join(filePath, $2);
-                // 将src改为dist，.scss改为.wxss，例如：'/xxx/src/scss/const.scss' => '/xxx/dist/scss/const.wxss'
-                const filea = rmPath.replace(/src/, 'dist').replace(/\.scss/, '.wxss');
-                // 加入待删除列表
-                hasRmCssFiles.add(filea);
-            }
+    return Promise
+        .resolve()
+
+        // 编译 sass
+        .then(() => new Promise((resolve, reject) => {
+            gulp
+                .src(from)
+
+                // 过滤 import 白名单，并记录到待删除列表
+                .pipe(tap((file) => {
+                    const filePath = path.dirname(file.path);
+                    const content = file.contents.toString();
+                    content.replace(/@import\s+['|"](.+)['|"];/g, ($1, $2) => {
+                        const isWhite = (whiteListForImport.filter(item => $2.indexOf(item) > -1)).length > 0;
+                        if (isWhite) {
+                            const rmPath = path.join(filePath, $2);
+                            const filea = rmPath.replace(/src/, 'dist').replace(/\.scss/, '.wxss');
+                            toRemoveFiles.add(filea);
+                        }
+                    });
+                }))
+
+                // 对 import 进行注释，绕过 sass 编译
+                .pipe(replace(/(@import.+;)/g, ($1, $2) => {
+                    const isWhite = (whiteListForImport.filter(item => $1.indexOf(item) > -1)).length > 0;
+                    return isWhite ? $2 : `/** ${$2} **/`;
+                }))
+
+                // sass 编译
+                .pipe(sass().on('error', sass.logError))
+
+                // 解除 import 注释
+                .pipe(replace(/(\/\*\*\s{0,})(@.+)(\s{0,}\*\*\/)/g, ($1, $2, $3) => $3.replace(/\.scss/g, '.wxss')))
+
+                // 文件重命名为 wxss
+                .pipe(rename({ extname: '.wxss' }))
+
+                // 写入目标目录
+                .pipe(gulp.dest(to))
+                .on('end', () => resolve({ toRemoveFiles }))
+                .on('error', reject);
+        }))
+
+        // 清理白名单样式
+        .then(() => {
+            const arr = Array.from(toRemoveFiles);
+            if (arr[0]) return gulp.src(arr, { read: false }).pipe(clean({ force: true }));
+            return Promise.resolve();
         });
-    }))
-    .pipe(replace(/(@import.+;)/g, ($1, $2) => {
-        const hasFilter = cssFilterFiles.filter(item => $1.indexOf(item) > -1);
-        if (hasFilter.length > 0) {
-            return $2;
-        }
-        return `/** ${$2} **/`;
-    }))
-    .pipe(sass().on('error', sass.logError))
-    .pipe(replace(/(\/\*\*\s{0,})(@.+)(\s{0,}\*\*\/)/g, ($1, $2, $3) => $3.replace(/\.scss/g, '.wxss')))
-    .pipe(rename({
-        extname: '.wxss',
-    }));
 }
 
 function sassTask() {
-    const { from: _from, to: _to } = gulpConfig.sass;
-    return doCompile(gulp.src(_from)).pipe(gulp.dest(_to));
+    return doCompile(gulpConfig.sass);
 }
 
 module.exports = {

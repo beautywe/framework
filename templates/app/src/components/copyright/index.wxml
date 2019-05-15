@@ -1,0 +1,3 @@
+<view class="copyright">
+    <view class="copyright-text" bind:longpress="showActionSheet">© 2019 BeuatyWe.js</view>
+</view>

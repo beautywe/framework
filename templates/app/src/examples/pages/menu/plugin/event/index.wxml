@@ -1,0 +1,7 @@
+<global-view id="global-view">
+    <view class="container">
+        <view style="text-align:center">Hello ! I'am event</view>
+        <button bindtap="jumpNewPageAndLoadPage">订阅图片加载事件</button>
+        <image class="image" src="{{image}}" />
+    </view>
+</global-view>

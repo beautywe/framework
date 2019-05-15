@@ -1,0 +1,4 @@
+<global-view id="global-view">
+    <view style="text-align:center">Hello ! I'am copyright</view>
+    <copyright/>
+</global-view>

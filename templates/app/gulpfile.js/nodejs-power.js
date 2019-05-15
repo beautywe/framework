@@ -2,9 +2,8 @@ const through2 = require('through2');
 const PluginError = require('plugin-error');
 const defineModule = require('gulp-define-module');
 const gulp = require('gulp');
-const rename = require('gulp-rename');
 
-const PLUGIN_NAME = 'gulp-json-compile';
+const PLUGIN_NAME = 'gulp-nodejs-power';
 const gulpConfig = require('./config');
 
 function toJSON() {
@@ -16,7 +15,7 @@ function toJSON() {
 
         if (file.isStream()) {
             return this.emit('error', new PluginError(PLUGIN_NAME, 'Streams not supported!'));
-        } else if (file.isBuffer()) {
+        } if (file.isBuffer()) {
             delete require.cache[file.path];
             // eslint-disable-next-line
             const jsObj = require(file.path);
@@ -29,37 +28,23 @@ function toJSON() {
     });
 }
 
-function doCompile({ from: _from, to: _to, fileMode = 'json', output }) {
-    if (fileMode === 'commonjs') {
-        return gulp
-            .src(_from)
-            .pipe(toJSON())
-            .pipe(defineModule('commonjs'))
-            .pipe(gulp.dest(_to));
-    }
+function doCompile({ from: _from, to: _to }) {
     return gulp
-            .src(_from)
-            .pipe(toJSON())
-            .pipe(rename({
-                basename: output.filename,
-                extname: output.json || '.json',
-            }))
-            .pipe(gulp.dest(_to));
+        .src(_from)
+        .pipe(toJSON())
+        .pipe(defineModule(gulpConfig.nodeJsPower.mode))
+        .pipe(gulp.dest(_to));
 }
 
-function jsonCompile() {
-    const tasks = [];
-    gulpConfig.jsonCompile.forEach((conf) => {
-        tasks.push(new Promise((resolve) => {
-            doCompile(conf).on('end', resolve);
-        }));
+function nodeJsPower() {
+    return doCompile({
+        from: gulpConfig.nodeJsPower.from,
+        to: gulpConfig.nodeJsPower.to,
     });
-    return Promise.all(tasks);
 }
-
 
 module.exports = {
-    fn: jsonCompile,
+    fn: nodeJsPower,
     toJSON,
     doCompile,
 };

@@ -1,0 +1,4 @@
+<global-view id="global-view">
+    <view style="text-align:center">Hello ! I'am other</view>
+    <view style="text-align:center">等待上一个页面图片加载完成事件...</view>
+</global-view>
