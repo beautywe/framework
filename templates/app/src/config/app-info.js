@@ -1,19 +1,20 @@
 const packageJSON = require('../../package.json');
 
-const version = packageJSON.version;
-const env = process.env.RUN_ENV || 'development';
+const { version } = packageJSON;
+const env = process.env.RUN_ENV || 'dev';
 
-// 环境的配置，会覆盖通用配置
-const appInfo = {
-    develpoment: {},
-    production: {},
+const appInfo = Object.assign({
+    version,
+    env,
+    appid: '<%= appid %>',
+    name: '<%= appName %>',
+}, {
+    // 开发环境的配置
+    dev: {},
+    // 测试环境的配置
     test: {},
-    common: {
-        version,
-        env,
-        appid: '<%= appid %>',
-        name: '<%= appName %>',
-    },
-};
+    // 线上环境的配置
+    prod: {},
+}[env] || {});
 
-module.exports.appInfo = Object.assign({}, appInfo.common, appInfo[env] || {});
+module.exports.appInfo = appInfo;

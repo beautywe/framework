@@ -11,8 +11,8 @@
     "lint": "git diff --cached --name-only | grep -E '\\.(js|jsx)$' | xargs eslint",
     "commitmsg": "validate-commit-msg",
     "commit": "git cz",
-    "build-test-app:complete": "node ./build-test-app.js && cd ./test-app && npm i && npm run build:test",
-    "build-test-app": "node ./build-test-app.js && cd ./test-app && npm run build:test"
+    "build-test-app:complete": "node ./build-test-app.js && cd ./test-app && npm i && npm run test",
+    "build-test-app": "node ./build-test-app.js && cd ./test-app && npm run test"
   },
   "keywords": [
     "beautywe",

@@ -3,8 +3,11 @@ const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const gulpConfig = require('./config');
 
+const RUN_ENV = process.env.RUN_ENV;
+
 const { from: _from, to: _to, babel: babelConf } = gulpConfig.npm;
-const webpackConfig = {
+
+const webpackConfig = Object.assign({
     mode: 'production',
     module: {
         rules: [{
@@ -18,9 +21,13 @@ const webpackConfig = {
         filename: 'index.js',
         libraryTarget: 'umd',
     },
-};
-
-if (gulpConfig.ENV === 'development') webpackConfig.optimization = { minimize: false };
+}, {
+    dev: {
+        optimization: { minimize: false },
+    },
+    test: {},
+    prod: {},
+}[RUN_ENV] || {});
 
 function doCompile(task) {
     return task.pipe(webpackStream(webpackConfig), webpack);

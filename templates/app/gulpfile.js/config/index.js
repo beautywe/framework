@@ -8,7 +8,6 @@ const APP_DIR = './src';
 const conf = {
     DIST_DIR,
     APP_DIR,
-    ENV: process.env.NODE_ENV,
 };
 
 conf.nodeJsPower = {
