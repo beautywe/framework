@@ -5,7 +5,7 @@ const env = process.env.RUN_ENV || 'dev';
 
 const appInfo = Object.assign({
     version,
-    env,
+    RUN_ENV: env,
     appid: '<%= appid %>',
     name: '<%= appName %>',
 }, {
