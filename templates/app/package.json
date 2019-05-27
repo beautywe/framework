@@ -27,12 +27,13 @@
         "babel-loader": "^8.0.5",
         "babel-plugin-array-includes": "^2.0.3",
         "chalk": "^2.4.1",
-        "git-cz": "^3.0.1",
         "cz-conventional-changelog": "^2.1.0",
         "del": "^3.0.0",
         "eslint": "^5.3.0",
         "eslint-config-airbnb-base": "^13.1.0",
         "eslint-plugin-import": "^2.16.0",
+        "fs-extra": "^8.0.0",
+        "git-cz": "^3.0.1",
         "gulp": "^4.0.0",
         "gulp-babel": "^8.0.0",
         "gulp-clean": "^0.4.0",
@@ -44,20 +45,13 @@
         "gulp-sass": "^3.1.0",
         "gulp-tap": "^1.0.1",
         "gulp-uglify": "^3.0.0",
+        "husky": "^2.3.0",
         "lodash": "^4.17.11",
         "plugin-error": "^1.0.1",
         "through2": "^2.0.3",
         "time-buried": "0.0.5",
         "webpack": "^4.29.6",
-        "webpack-stream": "^5.2.1",
-        "husky": "^2.3.0",
-        "fs-extra": "^8.0.0"
-    },
-    "husky": {
-        "hooks": {
-            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-            "pre-commit": "npm run lint"
-        }
+        "webpack-stream": "^5.2.1"
     },
     "commitlint": {
         "extends": [
